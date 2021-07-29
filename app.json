@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "easycrud",
+    "slug": "easycrud",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "easycrud"
+}
