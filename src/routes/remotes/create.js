@@ -59,6 +59,7 @@ export default function({route, navigation}){
             val: vali || '',
             desc: desc || '',
             quant: quant || '',
+            preco: preco || '',
             create: create || moment().format("DD/MM/YYYY"),
             update: moment().format("DD/MM/YYYY"),
         }
@@ -124,10 +125,10 @@ export default function({route, navigation}){
                     <Text style={{marginBottom:3, fontSize:16, width:"75%" }} >Preço:</Text>
                     <TextInput
                     value={preco}
-                    placeholder="10,99"
+                    placeholder="19.99 ; 25,50"
                     keyboardType='numeric'
                     style={styles.inputTxt}
-                    onChangeText = {setpreco}
+                    onChangeText={text => setpreco(text.replace(/[^\d,.-]/g,''))}
                     />
 
                     <Text style={{marginBottom:3, fontSize:16, width:"75%" }} >tags: (separe tags por vírgulas " , ")</Text>
