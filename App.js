@@ -1,13 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import React, { useEffect, useRef, useState } from 'react';
-import { AppState } from 'react-native';
+import { Fornecedor } from './src/service/contexto';
+import React from 'react';
 
 import create from './src/routes/remotes/create';
-import { Fornecedor } from './src/service/contexto';
-import read from './src/routes/remotes/read';
+import read from  './src/routes/remotes/read';
 import scan from './src/routes/remotes/scan';
-import remoto from './src/routes/remoto';
+import remoto from  './src/routes/remoto';
 import config from './src/routes/config';
 import login from './src/routes/login';
 import home from './src/routes/home';
@@ -16,28 +15,6 @@ import home from './src/routes/home';
 const Stack = createStackNavigator();
 
 export default function App() {
-
-  const appState = useRef(AppState.currentState);
-  const [appStateVisible, setAppStateVisible] = useState(appState.current);
-
-  // useEffect(() => {
-  //   AppState.addEventListener('change', _handleAppStateChange );
-  //   return () => {
-  //     AppState.removeEventListener('change', _handleAppStateChange );
-  //   };
-  // }, []);
-
-  // const _handleAppStateChange  = (nextAppState) => {
-  //   appState.current = nextAppState;
-  //   setAppStateVisible(appState.current);
-    
-  //   if(appState.current === "background"){
-  //     api.Storage.setToken('')
-  //   }
-
-  //   console.log("AppState", appState.current);
-  // };
-
   return (
     <Fornecedor>
       <NavigationContainer>
